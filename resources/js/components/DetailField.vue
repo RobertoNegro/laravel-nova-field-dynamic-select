@@ -27,7 +27,10 @@ export default {
                 return this.field;
             }
 
-            this.field.value = this.field.options.find(item => item['value'] == this.field.value).label;
+            const selectedOption = this.field.options.find(item => item['value'] == this.field.value);
+            if (selectedOption) {
+              this.field.value = selectedOption.label;
+            }
             return this.field;
         },
     },
